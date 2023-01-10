@@ -6,9 +6,7 @@ import TrainingWikiNavbarContainer from "./TrainingWiki/TrainingWikiNavbarContai
 import ListOfExercisesContainer from "./TrainingWiki/ListOfExercises/ListOfExercisesContainer";
 import TrainingNavbar from "./TrainingNavbar/TrainingNavbar";
 
-
 const Training = () => {
-
     const trainingNavigation =  [
         {id:1, tittle: 'Training Process', url: '/training/training_process/'},
         {id:2, tittle: 'Training Programs', url: '/training/training_programs/'},

@@ -16,6 +16,7 @@ function App() {
                 <NavigationContainer />
                 <div>
                     <Routes>
+                        <Route path='/' element={<>Home</>} />
                         <Route path='/profile/*' element={<ProfileContainer />} />
                         <Route path='/training/*' element={<Training />} />
                         <Route path='/users/*' element={<Users />} />
