@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 
 import { getFirestore } from "firebase/firestore"
 
-import { setDoc, doc, collection, addDoc, updateDoc } from "firebase/firestore";
+import { setDoc, doc, collection, addDoc } from "firebase/firestore";
 
 
 
@@ -43,12 +43,3 @@ export const editProgram = async (programId, values) => {
         return false;
     }
 };
-
-
-
-// export const frankDocRef = (programId) = doc(db, "programs", programId);
-// await setDoc(frankDocRef, {
-//     name: "Frank",
-//     favorites: { food: "Pizza", color: "Blue", subject: "recess" },
-//     age: 12
-// });
