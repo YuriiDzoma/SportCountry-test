@@ -1,5 +1,5 @@
 import styles from './TrainingPrograms.module.scss'
-import {connect} from "react-redux";
+import {connect, useDispatch, useSelector} from "react-redux";
 import ProgramsListLinks from "./ProgramList/ProgramsListLinks";
 import {addComment, addProgram, editProgram} from "redux/training-reducer";
 import {Route, Routes} from "react-router-dom";
@@ -17,6 +17,7 @@ import {
 import {AppStateType} from "redux/redux-store";
 import {collection, getDocs} from "firebase/firestore";
 import {db} from "api/api";
+import {fetchPrograms} from "redux/ActionCreators";
 
 
 const TrainingProgramsContainer = ({
@@ -33,20 +34,13 @@ const TrainingProgramsContainer = ({
         setProgramValue(value);
     }
 
-    const [programs, setPrograms] = useState([]);
-
-    const fetchPost = async () => {
-        await getDocs(collection(db, "programs"))
-            .then((querySnapshot) => {
-                const newData = querySnapshot.docs
-                    .map((doc) => ({...doc.data(), id: doc.id}));
-                setPrograms(newData);
-            })
-    }
+    const dispatch = useDispatch()
 
     useEffect(()=>{
-        fetchPost();
+        dispatch(fetchPrograms())
     }, [])
+
+    const programs = useSelector(state => state.training.programs)
 
     return (
 

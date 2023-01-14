@@ -1,11 +1,11 @@
 import styles from './App.module.scss';
 import HeaderContainer from "./components/Header/HeaderContainer";
-import NavigationContainer from "./components/Navigation/NavigationContainer";
 import {Routes, Route} from "react-router-dom";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import Training from "./components/Training/Training";
 import Users from "./components/Users/Users";
 import Login from "./components/Login/Login";
+import Navigation from "components/Navigation/Navigation";
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <div className={styles.wrapper}>
             <div className={styles.container}>
                 <HeaderContainer />
-                <NavigationContainer />
+                <Navigation />
                 <div>
                     <Routes>
                         <Route path='/' element={<>Home</>} />

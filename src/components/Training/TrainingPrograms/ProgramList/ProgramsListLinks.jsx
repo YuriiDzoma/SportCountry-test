@@ -6,7 +6,7 @@ import {ProgramsListLinksProps} from "./ProgramsListLinks.types";
 
 
 const ProgramsListLinks = ({ programs, getProgram }) => {
-debugger
+
     return (
     <div>
 
